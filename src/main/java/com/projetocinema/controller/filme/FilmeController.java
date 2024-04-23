@@ -4,7 +4,7 @@ import com.projetocinema.controller.filme.Dto.CriarFilmeDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/filme")
+@RequestMapping("/filmes")
 public class FilmeController {
     @GetMapping
     public String listar(){
