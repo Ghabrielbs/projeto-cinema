@@ -1,6 +1,6 @@
 package com.projetocinema.service.sessao;
 
-import com.projetocinema.controller.sessao.Dto.CriarSessaoDto;
+import com.projetocinema.controller.sessao.dto.CriarSessaoDto;
 import com.projetocinema.domain.filme.SessaoDeFilme;
 
 public class SessaoService {

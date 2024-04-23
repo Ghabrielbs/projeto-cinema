@@ -1,6 +1,6 @@
 package com.projetocinema.controller.filme;
 
-import com.projetocinema.controller.filme.Dto.CriarFilmeDto;
+import com.projetocinema.controller.filme.dto.CriarFilmeDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

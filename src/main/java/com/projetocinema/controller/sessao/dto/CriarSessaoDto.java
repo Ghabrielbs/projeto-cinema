@@ -1,4 +1,4 @@
-package com.projetocinema.controller.sessao.Dto;
+package com.projetocinema.controller.sessao.dto;
 
 public class CriarSessaoDto {
     private String id;

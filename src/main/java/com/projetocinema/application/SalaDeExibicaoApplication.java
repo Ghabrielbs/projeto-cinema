@@ -7,10 +7,10 @@ import java.util.UUID;
 
 public class SalaDeExibicaoApplication {
     public SalaDeExibicao criarSala(CriarSalaDto dto){
-        SalaDeExibicao salaDeExibicao = new SalaDeExibicao();
+        SalaDeExibicao sala = new SalaDeExibicao();
 
-        salaDeExibicao.setIdSalaDeExibicao(UUID.fromString(dto.getId()));
-        salaDeExibicao.setNumeroDaSala(dto.getNumero());
-        return salaDeExibicao;
+        sala.setIdSalaDeExibicao(UUID.fromString(dto.getId()));
+        sala.setNumeroDaSala(dto.getNumero());
+            return sala;
     }
 }

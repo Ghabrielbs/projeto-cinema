@@ -3,21 +3,21 @@ package com.projetocinema.domain.sala;
 import java.util.UUID;
 
 public class SalaDeExibicao {
-    private UUID idSalaDeExibicao;
-    private int numeroDaSala;
+    private UUID idSala;
+    private int numero;
     public UUID getIdSalaDeExibicao() {
-        return idSalaDeExibicao;
+        return idSala;
     }
 
     public void setIdSalaDeExibicao(UUID idSalaDeExibicao) {
-        this.idSalaDeExibicao = idSalaDeExibicao;
+        this.idSala = idSala;
     }
 
-    public int getNumeroDaSala() {
-        return numeroDaSala;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setNumeroDaSala(int numeroDaSala) {
-        this.numeroDaSala = numeroDaSala;
+    public void setNumeroDaSala(int numero) {
+        this.numero = numero;
     }
 }

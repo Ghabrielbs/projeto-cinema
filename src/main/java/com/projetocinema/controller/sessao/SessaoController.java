@@ -1,6 +1,6 @@
 package com.projetocinema.controller.sessao;
 
-import com.projetocinema.controller.sessao.Dto.CriarSessaoDto;
+import com.projetocinema.controller.sessao.dto.CriarSessaoDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

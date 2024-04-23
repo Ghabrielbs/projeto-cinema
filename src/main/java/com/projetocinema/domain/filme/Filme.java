@@ -6,23 +6,23 @@ import java.util.UUID;
 
 public class Filme {
     private UUID idFilme;
-    public String nomeFilme;
-    private String descricaoFilme;
+    public String nome;
+    private String descricao;
 
     public String getNomeFilme() {
-        return nomeFilme;
+        return nome;
     }
 
-    public void setNomeFilme(String nomeFilme) {
-        this.nomeFilme = nomeFilme;
+    public void setNomeFilme(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricaoFilme() {
-        return descricaoFilme;
+        return descricao;
     }
 
-    public void setDescricaoFilme(String descricaoFilme) {
-        this.descricaoFilme = descricaoFilme;
+    public void setDescricaoFilme(String descricao) {
+        this.descricao = descricao;
     }
 
     public void setIdFilme(UUID uuid) {

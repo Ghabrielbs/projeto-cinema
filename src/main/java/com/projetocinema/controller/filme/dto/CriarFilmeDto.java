@@ -1,4 +1,4 @@
-package com.projetocinema.controller.filme.Dto;
+package com.projetocinema.controller.filme.dto;
 
 public class CriarFilmeDto {
     private String id;
