@@ -10,7 +10,7 @@ public class SessaoDeFilmeAplication {
         SessaoDeFilme sessaoDeFilme= new SessaoDeFilme();
 
         sessaoDeFilme.setIdSessao(UUID.fromString(dto.getIdFilme()));
-        sessaoDeFilme.setNomeDoFilme(dto.()));
+        sessaoDeFilme.setNomeDoFilme((sessaoDeFilme.nomeDoFilme));
         sessaoDeFilme.setNumeroDaSala(sessaoDeFilme.getNumeroDaSala());
         return sessaoDeFilme;
     }
