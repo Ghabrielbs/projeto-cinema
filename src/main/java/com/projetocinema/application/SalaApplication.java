@@ -2,10 +2,12 @@ package com.projetocinema.application;
 
 import com.projetocinema.controller.sala.Dto.CriarSalaDto;
 import com.projetocinema.domain.sala.SalaDeExibicao;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-public class SalaDeExibicaoApplication {
+@Component
+public class SalaApplication {
     public SalaDeExibicao criarSala(CriarSalaDto dto){
         SalaDeExibicao sala = new SalaDeExibicao();
 

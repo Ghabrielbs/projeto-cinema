@@ -2,10 +2,12 @@ package com.projetocinema.application;
 
 import com.projetocinema.controller.sessao.dto.CriarSessaoDto;
 import com.projetocinema.domain.filme.SessaoDeFilme;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-public class SessaoDeFilmeApplication {
+@Component
+public class SessaoApplication {
     public SessaoDeFilme criarSessaoFilme(CriarSessaoDto dto){
         SessaoDeFilme sessao= new SessaoDeFilme();
 
