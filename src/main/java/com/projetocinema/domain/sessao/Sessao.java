@@ -1,8 +1,8 @@
-package com.projetocinema.domain.filme;
+package com.projetocinema.domain.sessao;
 
 import java.util.UUID;
 
-public class SessaoDeFilme {
+public class Sessao {
     private UUID idSessao;
     private int numeroDaSala;
     public String nomeDoFilme;

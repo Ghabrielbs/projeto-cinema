@@ -15,25 +15,33 @@ public class FilmeController {
     private FilmeService filmeService;
 
     @Autowired
+    private Filme filme;
+
+    @Autowired
     private FilmeApplication filmeApplication;
 
     @GetMapping
     public String listar(){
-        return "listar filme";
+        //enviando para o service
+        filmeService.listarFilme(filme);
+        return null;
     }
 
     @GetMapping("/{id}")
     public String buscar(@PathVariable String id){
-        return id;
+        //enviando para o service
+        filmeService.buscarFilme(filme);
+        return null;
     }
 
     @PostMapping
     public String criar(@RequestBody CriarFilmeDto dto){
+
         //convertendo dto em entidade
         Filme filme = filmeApplication.criarFilme(dto);
         //enviando para o service
         filmeService.criarFilme(filme);
-        return "filme criado";
+        return null;
     }
 
 

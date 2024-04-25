@@ -15,15 +15,20 @@ public class SalaController {
     private SalaApplication salaDeExibicaoApplication;
 
     @Autowired
+    private SalaDeExibicao sala;
+
+    @Autowired
     private SalaService salaService;
     @GetMapping
     public String listarSala(){
-        return "listar Sala";
+        salaService.listarSala(sala);
+        return null;
     }
 
     @GetMapping("/{id}")
     public String buscar(@PathVariable String id){
-        return id;
+        salaService.buscar(sala);
+        return null;
     }
 
     @PostMapping
@@ -32,6 +37,6 @@ public class SalaController {
        SalaDeExibicao sala = salaDeExibicaoApplication.criarSala(dto);
        //enviando para o service
        salaService.criarSala(sala);
-       return  "sala criada";
+       return null;
     }
 }

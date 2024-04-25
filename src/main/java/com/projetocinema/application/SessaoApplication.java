@@ -1,15 +1,15 @@
 package com.projetocinema.application;
 
 import com.projetocinema.controller.sessao.dto.CriarSessaoDto;
-import com.projetocinema.domain.filme.SessaoDeFilme;
+import com.projetocinema.domain.sessao.Sessao;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
 public class SessaoApplication {
-    public SessaoDeFilme criarSessaoFilme(CriarSessaoDto dto){
-        SessaoDeFilme sessao= new SessaoDeFilme();
+    public Sessao criarSessaoFilme(CriarSessaoDto dto){
+        Sessao sessao= new Sessao();
 
         sessao.setIdSessao(UUID.fromString(dto.getIdFilme()));
         sessao.setNomeDoFilme((sessao.nomeDoFilme));

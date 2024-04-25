@@ -7,15 +7,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SalaService {
-    public SalaDeExibicao listarSala(CriarSalaDto dto){
-        return listarSala(dto);
+    public SalaDeExibicao listarSala(SalaDeExibicao sala){
+        return null;
     }
 
-    public SalaDeExibicao buscar(CriarSalaDto dto) {
-        return buscar(dto);
+    public SalaDeExibicao buscar(SalaDeExibicao sala) {
+        return null;
     }
 
-    public SalaDeExibicao criarSala(SalaDeExibicao salaDeExibicao) {
+    public SalaDeExibicao criarSala(SalaDeExibicao sala) {
         return null;
     }
 }

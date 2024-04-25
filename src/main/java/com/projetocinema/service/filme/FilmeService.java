@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FilmeService {
-    public Filme listarFilme(CriarFilmeDto dto){
-        return listarFilme(dto);
+    public Filme listarFilme(Filme filme){
+        return null;
     }
 
     public Filme criarFilme(Filme filme){
         return null;
     }
 
-    public Filme buscarFilme(CriarFilmeDto dto){
-        return buscarFilme(dto);
+    public Filme buscarFilme(Filme  filme){
+        return null;
     }
 }
