@@ -15,22 +15,19 @@ public class FilmeController {
     private FilmeService filmeService;
 
     @Autowired
-    private Filme filme;
-
-    @Autowired
     private FilmeApplication filmeApplication;
 
     @GetMapping
     public String listar(){
         //enviando para o service
-        filmeService.listarFilme(filme);
+        filmeService.listarFilme();
         return null;
     }
 
     @GetMapping("/{id}")
     public String buscar(@PathVariable String id){
         //enviando para o service
-        filmeService.buscarFilme(filme);
+        filmeService.buscarFilme(id);
         return null;
     }
 

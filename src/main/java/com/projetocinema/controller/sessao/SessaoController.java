@@ -14,17 +14,16 @@ public class SessaoController {
     private SessaoApplication sessaoApplication;
     @Autowired
     private SessaoService sessaoService;
-    @Autowired
-    private Sessao sessao;
+
     @GetMapping
     public String listar(){
-        sessaoService.listarSessao(sessao);
+        sessaoService.listarSessao();
         return null;
     }
 
     @GetMapping ("/{id}")
     public String buscar(@PathVariable String id){
-        sessaoService.buscarSessao(sessao);
+        sessaoService.buscarSessao(id);
         return null;
     }
 

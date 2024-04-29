@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SessaoService {
-    public Sessao buscarSessao(Sessao sessao){
+    public Sessao buscarSessao(String id){
         return null;
     }
 
@@ -13,7 +13,7 @@ public class SessaoService {
         return null;
     }
 
-    public Sessao listarSessao(Sessao sessao) {
+    public Sessao listarSessao() {
         return null;
     }
 

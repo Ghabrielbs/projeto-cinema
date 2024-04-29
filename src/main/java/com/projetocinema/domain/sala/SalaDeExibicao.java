@@ -1,7 +1,10 @@
 package com.projetocinema.domain.sala;
 
+import org.springframework.stereotype.Component;
+
 import java.util.UUID;
 
+@Component
 public class SalaDeExibicao {
     private UUID idSala;
     private int numero;

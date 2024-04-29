@@ -1,8 +1,10 @@
 package com.projetocinema.domain.filme;
 
+import org.springframework.data.domain.DomainEvents;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.UUID;
+
 
 public class Filme {
     private UUID idFilme;

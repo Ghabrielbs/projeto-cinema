@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SalaService {
-    public SalaDeExibicao listarSala(SalaDeExibicao sala){
+    public SalaDeExibicao listarSala(){
         return null;
     }
 
-    public SalaDeExibicao buscar(SalaDeExibicao sala) {
+    public SalaDeExibicao buscar(String id) {
         return null;
     }
 

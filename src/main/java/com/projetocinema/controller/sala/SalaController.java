@@ -19,15 +19,18 @@ public class SalaController {
 
     @Autowired
     private SalaService salaService;
+
+
+
     @GetMapping
     public String listarSala(){
-        salaService.listarSala(sala);
+        salaService.listarSala();
         return null;
     }
 
     @GetMapping("/{id}")
     public String buscar(@PathVariable String id){
-        salaService.buscar(sala);
+        salaService.buscar(id);
         return null;
     }
 

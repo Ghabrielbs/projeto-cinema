@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FilmeService {
-    public Filme listarFilme(Filme filme){
+    public Filme listarFilme(){
         return null;
     }
 
@@ -14,7 +14,7 @@ public class FilmeService {
         return null;
     }
 
-    public Filme buscarFilme(Filme  filme){
+    public Filme buscarFilme(String id){
         return null;
     }
 }
