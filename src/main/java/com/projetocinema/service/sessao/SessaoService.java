@@ -5,15 +5,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SessaoService {
-    public Sessao buscarSessao(String id){
+    public Sessao buscar(String id){
+
         return null;
     }
 
-    public Sessao criarSessao(Sessao sessao){
+    public Sessao criar(Sessao sessao){
+
         return null;
     }
 
-    public Sessao listarSessao() {
+    public Sessao listar() {
+
         return null;
     }
 

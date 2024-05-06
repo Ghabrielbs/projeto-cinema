@@ -6,6 +6,7 @@ public class CriarSessaoDto {
     private String idFilme;
 
     public String getId() {
+
         return id;
     }
 

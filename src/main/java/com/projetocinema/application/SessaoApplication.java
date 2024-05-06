@@ -8,12 +8,13 @@ import java.util.UUID;
 
 @Component
 public class SessaoApplication {
-    public Sessao criarSessaoFilme(CriarSessaoDto dto){
+    public Sessao criarSessao(CriarSessaoDto dto){
         Sessao sessao= new Sessao();
 
-        sessao.setIdSessao(UUID.fromString(dto.getIdFilme()));
-        sessao.setNomeDoFilme((sessao.nomeDoFilme));
-        sessao.setNumeroDaSala(sessao.getNumeroDaSala());
-            return sessao;
+        sessao.setId(UUID.fromString(dto.getIdFilme()));
+        sessao.setIdFilme((sessao.idFilme));
+        sessao.setIdSala(Integer.parseInt(sessao.getIdSala()));
+
+        return sessao;
     }
 }

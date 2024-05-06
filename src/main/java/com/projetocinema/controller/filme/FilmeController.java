@@ -5,7 +5,6 @@ import com.projetocinema.controller.filme.dto.CriarFilmeDto;
 import com.projetocinema.domain.filme.Filme;
 import com.projetocinema.service.filme.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,14 +19,16 @@ public class FilmeController {
     @GetMapping
     public String listar(){
         //enviando para o service
-        filmeService.listarFilme();
+        filmeService.listar();
+
         return null;
     }
 
     @GetMapping("/{id}")
     public String buscar(@PathVariable String id){
         //enviando para o service
-        filmeService.buscarFilme(id);
+        filmeService.buscar(id);
+
         return null;
     }
 
@@ -37,7 +38,8 @@ public class FilmeController {
         //convertendo dto em entidade
         Filme filme = filmeApplication.criarFilme(dto);
         //enviando para o service
-        filmeService.criarFilme(filme);
+        filmeService.criar(filme);
+
         return null;
     }
 

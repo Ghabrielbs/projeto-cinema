@@ -1,20 +1,22 @@
 package com.projetocinema.service.filme;
 
-import com.projetocinema.controller.filme.dto.CriarFilmeDto;
 import com.projetocinema.domain.filme.Filme;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FilmeService {
-    public Filme listarFilme(){
+    public Filme listar(){
+
         return null;
     }
 
-    public Filme criarFilme(Filme filme){
+    public Filme criar(Filme filme){
+
         return null;
     }
 
-    public Filme buscarFilme(String id){
+    public Filme buscar(String id){
+
         return null;
     }
 }

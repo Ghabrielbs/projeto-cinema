@@ -8,11 +8,12 @@ import java.util.UUID;
 
 @Component
 public class SalaApplication {
-    public SalaDeExibicao criarSala(CriarSalaDto dto){
+    public SalaDeExibicao criar(CriarSalaDto dto){
         SalaDeExibicao sala = new SalaDeExibicao();
 
         sala.setIdSalaDeExibicao(UUID.fromString(dto.getId()));
         sala.setNumeroDaSala(dto.getNumero());
-            return sala;
+
+        return sala;
     }
 }

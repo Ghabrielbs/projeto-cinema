@@ -12,25 +12,29 @@ import org.springframework.web.bind.annotation.*;
 public class SessaoController {
     @Autowired
     private SessaoApplication sessaoApplication;
+
     @Autowired
     private SessaoService sessaoService;
 
     @GetMapping
     public String listar(){
-        sessaoService.listarSessao();
+        sessaoService.listar();
+
         return null;
     }
 
     @GetMapping ("/{id}")
     public String buscar(@PathVariable String id){
-        sessaoService.buscarSessao(id);
+        sessaoService.buscar(id);
+
         return null;
     }
 
     @PostMapping
     public String criar(@RequestBody CriarSessaoDto dto){
-        Sessao sessao = sessaoApplication.criarSessaoFilme(dto);
-        sessaoService.criarSessao(sessao);
+        Sessao sessao = sessaoApplication.criarSessao(dto);
+        sessaoService.criar(sessao);
+
         return null;
     }
 }
