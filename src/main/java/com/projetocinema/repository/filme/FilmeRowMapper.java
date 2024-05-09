@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 @Component
 public class FilmeRowMapper implements RowMapper<Filme> {
@@ -14,9 +13,9 @@ public class FilmeRowMapper implements RowMapper<Filme> {
     @Override
     public Filme mapRow(ResultSet rs, int rowNum) throws SQLException {
         Filme filme = new Filme();
-        filme.setNomeFilme(rs.getString("nome"));
-        filme.setDescricaoFilme(rs.getString("descricao"));
-        filme.setIdFilme(UUID.fromString(rs.getString("id")));
+        filme.setNome(rs.getString("nome"));
+        filme.setDescricao(rs.getString("descricao"));
+        filme.setId(rs.getString("id"));
 
         return filme;
     }

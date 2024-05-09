@@ -5,10 +5,14 @@ import com.projetocinema.controller.sessao.dto.CriarSessaoDto;
 import com.projetocinema.domain.sessao.Sessao;
 import com.projetocinema.service.sessao.SessaoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/Sessao")
+@RequestMapping("/sessaodofilme")
 public class SessaoController {
     @Autowired
     private SessaoApplication sessaoApplication;
@@ -17,24 +21,23 @@ public class SessaoController {
     private SessaoService sessaoService;
 
     @GetMapping
-    public String listar(){
-        sessaoService.listar();
+    public ResponseEntity<List<Sessao>> listar(){
 
-        return null;
+        return ResponseEntity.status(HttpStatus.OK).body(sessaoService.listar());
     }
 
     @GetMapping ("/{id}")
-    public String buscar(@PathVariable String id){
-        sessaoService.buscar(id);
+    public ResponseEntity <Sessao> buscar(@PathVariable String id){
 
-        return null;
+        return ResponseEntity.status(HttpStatus.OK).body(sessaoService.buscar(id));
     }
 
     @PostMapping
-    public String criar(@RequestBody CriarSessaoDto dto){
+    public ResponseEntity <Sessao> criar(@RequestBody CriarSessaoDto dto){
+
         Sessao sessao = sessaoApplication.criarSessao(dto);
         sessaoService.criar(sessao);
 
-        return null;
+        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.criar(sessao));
     }
 }

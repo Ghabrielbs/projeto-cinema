@@ -3,14 +3,14 @@ package com.projetocinema.domain.sessao;
 import java.util.UUID;
 
 public class Sessao {
-    private UUID id;
+    private String id;
     private String idSala;
     public String idFilme;
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -22,8 +22,8 @@ public class Sessao {
         this.idSala = String.valueOf(idSala);
     }
 
-    public String getnomeDoFilme(String nomeDoFilme) {
-        return nomeDoFilme;
+    public String getIdFilme() {
+        return idFilme;
     }
 
     public void setIdFilme(String idFilme) {

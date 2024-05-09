@@ -5,10 +5,14 @@ import com.projetocinema.controller.sala.Dto.CriarSalaDto;
 import com.projetocinema.domain.sala.SalaDeExibicao;
 import com.projetocinema.service.sala.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/SalaDeExibiçao")
+@RequestMapping("/saladeexibicao")
 public class SalaController {
     @Autowired
     private SalaApplication salaDeExibicaoApplication;
@@ -22,25 +26,24 @@ public class SalaController {
 
 
     @GetMapping
-    public String listar(){
-        salaService.listar();
-        return null;
+    public ResponseEntity<List<SalaDeExibicao>> listar(){
+
+        return ResponseEntity.status(HttpStatus.OK).body(salaService.listar());
     }
 
     @GetMapping("/{id}")
-    public String buscar(@PathVariable String id){
-        salaService.buscar(id);
+    public ResponseEntity<SalaDeExibicao> buscar(@PathVariable String id){
 
-        return null;
+        return ResponseEntity.status(HttpStatus.OK).body(salaService.buscar(id));
     }
 
     @PostMapping
-    public String criar(@RequestBody CriarSalaDto dto){
+    public ResponseEntity<SalaDeExibicao> criar(@RequestBody CriarSalaDto dto){
         //convertendo dto em entidade
        SalaDeExibicao sala = salaDeExibicaoApplication.criar(dto);
        //enviando para o service
        salaService.criar(sala);
 
-       return null;
+       return ResponseEntity.status(HttpStatus.CREATED).body(salaService.criar(sala));
     }
 }

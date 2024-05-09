@@ -11,7 +11,7 @@ public class SessaoApplication {
     public Sessao criarSessao(CriarSessaoDto dto){
         Sessao sessao= new Sessao();
 
-        sessao.setId(UUID.fromString(dto.getIdFilme()));
+        sessao.setId(dto.getIdFilme());
         sessao.setIdFilme((sessao.idFilme));
         sessao.setIdSala(Integer.parseInt(sessao.getIdSala()));
 

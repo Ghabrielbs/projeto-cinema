@@ -15,9 +15,9 @@ public class SessaoRowMapper implements RowMapper<Sessao> {
     public Sessao mapRow(ResultSet rs, int rowNum) throws SQLException {
         Sessao sessao = new Sessao();
 
-        sessao.setId(UUID.fromString(rs.getString("id")));
-        sessao.setIdFilme(rs.getString("nome"));
-        sessao.setIdSala(Integer.parseInt(rs.getString("idSala")));
+        sessao.setId(rs.getString("id"));
+        sessao.setIdFilme(rs.getString("filme"));
+        sessao.setIdSala(Integer.parseInt(rs.getString("saladecinema")));
 
         return sessao;
     }

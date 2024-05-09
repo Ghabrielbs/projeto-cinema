@@ -1,36 +1,32 @@
 package com.projetocinema.domain.filme;
 
-import org.springframework.data.domain.DomainEvents;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.UUID;
-
 
 public class Filme {
-    private UUID idFilme;
+    private String id;
     public String nome;
     private String descricao;
 
-    public String getNomeFilme() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNomeFilme(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getDescricaoFilme() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricaoFilme(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    public void setIdFilme(UUID uuid) {
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id =id;
     }
 
-    public UUID getIdFilme() {
-        return idFilme;
-    }
+
 }

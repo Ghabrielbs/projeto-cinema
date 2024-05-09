@@ -2,17 +2,15 @@ package com.projetocinema.domain.sala;
 
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component
 public class SalaDeExibicao {
-    private UUID idSala;
+    private String idSala;
     private int numero;
-    public UUID getIdSalaDeExibicao() {
+    public String getIdSala() {
         return idSala;
     }
 
-    public void setIdSalaDeExibicao(UUID idSalaDeExibicao) {
+    public void setIdSala(String idSala) {
         this.idSala = idSala;
     }
 
@@ -20,7 +18,7 @@ public class SalaDeExibicao {
         return numero;
     }
 
-    public void setNumeroDaSala(int numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 }
