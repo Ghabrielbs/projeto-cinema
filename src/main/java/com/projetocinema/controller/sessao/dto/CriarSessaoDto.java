@@ -30,7 +30,7 @@ public class CriarSessaoDto {
         this.idFilme = idFilme;
     }
 
-    CriarSessaoDto(String id, int idSala, String idFilme){
+    public CriarSessaoDto(String id, int idSala, String idFilme){
         this.idFilme = idFilme;
         this.idSala = idSala;
         this.id = id;

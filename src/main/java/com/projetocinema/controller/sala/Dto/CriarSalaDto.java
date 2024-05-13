@@ -2,7 +2,7 @@ package com.projetocinema.controller.sala.Dto;
 
 public class CriarSalaDto {
     private String id;
-    private int numero;
+    private Integer numero;
     public String getId() {
         return id;
     }

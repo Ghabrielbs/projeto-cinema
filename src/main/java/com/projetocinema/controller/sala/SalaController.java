@@ -42,8 +42,8 @@ public class SalaController {
         //convertendo dto em entidade
        SalaDeExibicao sala = salaDeExibicaoApplication.criar(dto);
        //enviando para o service
-       salaService.criar(sala);
+       salaService.criar(dto);
 
-       return ResponseEntity.status(HttpStatus.CREATED).body(salaService.criar(sala));
+       return ResponseEntity.status(HttpStatus.CREATED).body(salaService.criar(dto));
     }
 }

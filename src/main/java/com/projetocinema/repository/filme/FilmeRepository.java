@@ -54,4 +54,17 @@ public class FilmeRepository {
             e.printStackTrace();
         }
     }
+
+    public void atualizar(Filme filme){
+        jdbcTemplate.update("update filme set nome =?, descricao =? where id =?",
+                filme.getNome(),filme.getDescricao(),filme.getId());
+    }
+
+    public void deletar( Filme filme) {
+        jdbcTemplate.update("delete from filme where id =?", filme.getId());
+    }
+
+    public Integer findByCountId(String id){
+        return jdbcTemplate.queryForObject("select count(*) from filme where id=?", Integer.class,id);
+    }
 }

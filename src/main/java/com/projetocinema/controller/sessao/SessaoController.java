@@ -36,8 +36,8 @@ public class SessaoController {
     public ResponseEntity <Sessao> criar(@RequestBody CriarSessaoDto dto){
 
         Sessao sessao = sessaoApplication.criarSessao(dto);
-        sessaoService.criar(sessao);
+        sessaoService.criar(dto);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.criar(sessao));
+        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.criar(dto));
     }
 }
