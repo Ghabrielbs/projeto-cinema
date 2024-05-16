@@ -35,13 +35,16 @@ public class SessaoService {
 
     public Sessao criar(CriarSessaoDto sessaoDto){
         Sessao sessao = new Sessao();
+        sessao.setId(sessaoDto.getId());
+        sessao.setIdFilme(sessaoDto.getIdFilme());
+        sessao.setIdSala(sessaoDto.getIdSala());
 
-        if(filmeRepository.buscar(sessaoDto.getId()).equals(0))
+        if(sessao.getId() == null)
             throw new RequisicaoApiExpetion(SessaoMenssagens.ID_SESSAO_INVALIDO.getMenssagem());
         if (sessao.getId() == null)
             throw new RequisicaoApiExpetion(SessaoMenssagens.ID_SESSAO_VAZIO.getMenssagem());
         // Ao invés de validar numericamente, validar se o filme existe pelo repository dele
-        if (sessao.getIdFilme().equals(0))
+        if (sessao.getIdFilme()== null)
             throw new RequisicaoApiExpetion(SessaoMenssagens.ID_SESSAO_FILME_INVALIDO.getMenssagem());
 
         sessaoRepository.criar(sessao);
@@ -53,6 +56,23 @@ public class SessaoService {
         if (sessaoRepository.listar().equals(0))
             throw new RequisicaoApiExpetion(SessaoMenssagens.TABELA_SESSAO_VAZIA.getMenssagem());
         List<Sessao> sessao = sessaoRepository.listar();
+
+        return sessao;
+    }
+
+    public Sessao atualizarSessao(String id, CriarSessaoDto sessaoDto){
+        if (sessaoDto.getIdFilme().equals(null))
+            throw new RequisicaoApiExpetion(SessaoMenssagens.ID_SESSAO_FILME_INVALIDO.getMenssagem());
+
+        Sessao sessao = new Sessao();
+        sessaoRepository.atualizar(sessao);
+
+        return sessao;
+    }
+
+    public Sessao deletarSessao(String id){
+        Sessao sessao = buscar(id);
+        sessaoRepository.deletar(sessao);
 
         return sessao;
     }

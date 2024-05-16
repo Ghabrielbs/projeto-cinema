@@ -19,7 +19,7 @@ public class SalaRepository {
         this.salaRowMapper = salaRowMapper;
     }
     public List<SalaDeExibicao> listar (){
-        String sql = "SELECT * FROM saladeexibicao WHERE id = ?";
+        String sql = "SELECT * FROM saladeexibicao";
         List<SalaDeExibicao>  resultado = null;
 
         try {
@@ -44,16 +44,24 @@ public class SalaRepository {
         return resultado;
     }
 
-    public void criar(SalaDeExibicao salaDeExibicao){
+    public void criar(SalaDeExibicao salaDeExibicao) {
         String sql = "INSERT INTO saladeexibicao(id,numero) VALUES (?, ?)";
-        SalaDeExibicao resultado = null;
 
         try {
-          jdbcTemplate.update(sql, salaDeExibicao.getIdSala(),
+            jdbcTemplate.update(sql, salaDeExibicao.getIdSala(),
                     salaDeExibicao.getNumero());
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void atualizar(SalaDeExibicao salaDeExibicao){
+        jdbcTemplate.update("update saladeexibicao set numero =? where id =?",
+                salaDeExibicao.getNumero(),salaDeExibicao.getIdSala());
+    }
+
+    public void deletar( SalaDeExibicao salaDeExibicao) {
+        jdbcTemplate.update("delete from saladeexibicao where id =?", salaDeExibicao.getIdSala());
     }
 }
 

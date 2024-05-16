@@ -45,13 +45,22 @@ public class SessaoRepository {
     }
 
     public void criar(Sessao sessao){
-        String sql = "insert into sessaodofilme (id,saladecinema,Filme) value (?, ?, ?)";
+        String sql = "insert into sessaodofilme (id,saladecinema,filme) values (?,?,?)";
 
         try {
-            jdbcTemplate.update(sessao.getIdSala(), sessao.getIdFilme(), sessao.getId());
+            jdbcTemplate.update(sql, sessao.getId(),sessao.getIdSala(),sessao.getIdFilme());
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void atualizar(Sessao sessao){
+        jdbcTemplate.update("update sessaodofilme set saladecinema =?, filme =? where id =?",
+                sessao.getIdSala(),sessao.getIdFilme(),sessao.getId());
+    }
+
+    public void deletar( Sessao sessao) {
+        jdbcTemplate.update("delete from sessaodofilme where id =?", sessao.getId());
     }
 }
 

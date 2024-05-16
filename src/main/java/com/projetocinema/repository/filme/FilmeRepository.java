@@ -12,7 +12,7 @@ public class FilmeRepository {
     private final FilmeRowMapper filmeRowMapper;
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
     public FilmeRepository(FilmeRowMapper filmeRowMapper) {
         this.filmeRowMapper = filmeRowMapper;
@@ -48,7 +48,7 @@ public class FilmeRepository {
 
 
         try {
-            jdbcTemplate.update(sql, filme.getId(), filme.getDescricao(), filme.getNome());
+            jdbcTemplate.update(sql, filme.getId(),filme.getNome(),filme.getDescricao());
         }
         catch(Exception e){
             e.printStackTrace();

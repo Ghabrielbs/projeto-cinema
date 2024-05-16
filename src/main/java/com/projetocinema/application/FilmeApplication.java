@@ -11,11 +11,8 @@ public class FilmeApplication {
 
         filme.setId(dto.getId());
         filme.setDescricao(dto.getDescricao());
-        filme.setNome(dto.getNome());;
+        filme.setNome(dto.getNome());
 
         return filme;
     }
-
-
-
 }

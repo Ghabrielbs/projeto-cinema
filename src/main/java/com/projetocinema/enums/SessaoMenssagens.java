@@ -7,13 +7,14 @@ public enum SessaoMenssagens {
     ID_SESSAO_FILME_INVALIDO("O ID DO FILME NÃO FOI ENCONTRADO"),
     SESSAO_NAO_ENCONTRADA("Sessão não encontrada");
 
-    private String menssagem;
+    private final String menssagem;
 
     SessaoMenssagens(String menssagem){
+
         this.menssagem = menssagem;
     }
     public String getMenssagem(){
+
         return menssagem;
     }
-
 }

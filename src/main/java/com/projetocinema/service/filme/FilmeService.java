@@ -28,6 +28,9 @@ public class FilmeService {
             throw new RequisicaoApiExpetion(FilmeMenssagens.ID_INVALIDO.getmenssagem());
 
         Filme filme = new Filme();
+        filme.setId(filmeDto.getId());
+        filme.setNome(filmeDto.getNome());
+        filme.setDescricao(filmeDto.getDescricao());
         filmeRepository.criar(filme);
 
         return filme;
