@@ -2,7 +2,7 @@ package com.projetocinema.controller.sessao.dto;
 
 public class CriarSessaoDto {
     private String id;
-    private int idSala;
+    private String idSala;
     private String idFilme;
 
     public String getId() {
@@ -11,26 +11,32 @@ public class CriarSessaoDto {
     }
 
     public void setId(String id) {
+
         this.id = id;
     }
 
-    public int getIdSala() {
+    public String getIdSala() {
+
         return idSala;
     }
 
-    public void setIdSala(int idSala) {
+    public void setIdSala(String idSala) {
+
         this.idSala = idSala;
     }
 
     public String getIdFilme() {
+
         return idFilme;
     }
 
     public void setIdFilme(String idFilme) {
+
         this.idFilme = idFilme;
     }
 
-    public CriarSessaoDto(String id, int idSala, String idFilme){
+    public CriarSessaoDto(String id, String idSala, String idFilme){
+
         this.idFilme = idFilme;
         this.idSala = idSala;
         this.id = id;

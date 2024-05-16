@@ -18,7 +18,7 @@ public class SalaService {
     private SalaRepository salaRepository;
 
     public List<SalaDeExibicao> listar(){
-        if (salaRepository.listar().equals(0))
+        if (salaRepository.listar() ==null)
             throw new RequisicaoApiExpetion(SalaMenssagens.TABELA_SALA_VAZIA.getMenssagem());
         List<SalaDeExibicao> salaDeExibicao = salaRepository.listar();
 
@@ -34,14 +34,28 @@ public class SalaService {
     }
 
     public SalaDeExibicao criar(CriarSalaDto salaDto) {
-        if (salaRepository.buscar(salaDto.getId()).equals(0))
-            throw new RequisicaoApiExpetion(SalaMenssagens.ID_INVALIDO.getMenssagem());
+
         if (salaDto.getNumero() == 0 )
             throw new RequisicaoApiExpetion(SalaMenssagens.NUMERO_SALA_VAZIO.getMenssagem());
-        if (salaDto.getId().equals(null))
-            throw new RequisicaoApiExpetion(SalaMenssagens.ID_SALA_VAZIO.getMenssagem());
+
         SalaDeExibicao sala = new SalaDeExibicao();
+        sala.setIdSala(salaDto.getId());
+        sala.setNumero(salaDto.getNumero());
         salaRepository.criar(sala);
+
+        return sala;
+    }
+
+    public SalaDeExibicao atualizar(String id, CriarSalaDto salaDto) {
+        SalaDeExibicao sala = new SalaDeExibicao();
+        salaRepository.atualizar(sala);
+
+        return sala;
+    }
+
+    public SalaDeExibicao deletar(String id) {
+        SalaDeExibicao sala = new SalaDeExibicao();
+        salaRepository.deletar(sala);
 
         return sala;
     }

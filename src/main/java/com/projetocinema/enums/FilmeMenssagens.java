@@ -7,13 +7,13 @@ public enum FilmeMenssagens {
     FILME_NAO_ENCONTRADO("ID Não encontrado."),
     NOME_DO_FILME_VAZIO("o nome do filme não pode ser vazio");
 
-
-
-    private  String menssagem;
+    private final String menssagem;
     FilmeMenssagens(String menssagem){
+
         this.menssagem = menssagem;
     }
     public String getmenssagem(){
+
         return menssagem;
     }
 }

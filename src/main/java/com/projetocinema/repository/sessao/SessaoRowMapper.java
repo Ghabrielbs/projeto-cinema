@@ -17,7 +17,7 @@ public class SessaoRowMapper implements RowMapper<Sessao> {
 
         sessao.setId(rs.getString("id"));
         sessao.setIdFilme(rs.getString("filme"));
-        sessao.setIdSala(Integer.parseInt(rs.getString("saladecinema")));
+        sessao.setIdSala((rs.getString("saladecinema")));
 
         return sessao;
     }

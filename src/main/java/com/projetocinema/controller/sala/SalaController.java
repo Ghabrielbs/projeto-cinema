@@ -4,6 +4,7 @@ import com.projetocinema.application.SalaApplication;
 import com.projetocinema.controller.sala.Dto.CriarSalaDto;
 import com.projetocinema.domain.sala.SalaDeExibicao;
 import com.projetocinema.service.sala.SalaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +17,8 @@ import java.util.List;
 public class SalaController {
     @Autowired
     private SalaApplication salaDeExibicaoApplication;
-
     @Autowired
     private SalaDeExibicao sala;
-
     @Autowired
     private SalaService salaService;
 
@@ -39,11 +38,24 @@ public class SalaController {
 
     @PostMapping
     public ResponseEntity<SalaDeExibicao> criar(@RequestBody CriarSalaDto dto){
+
         //convertendo dto em entidade
        SalaDeExibicao sala = salaDeExibicaoApplication.criar(dto);
        //enviando para o service
-       salaService.criar(dto);
+       SalaDeExibicao salaDeExibicao =salaService.criar(dto);
 
-       return ResponseEntity.status(HttpStatus.CREATED).body(salaService.criar(dto));
+       return ResponseEntity.status(HttpStatus.CREATED).body(salaDeExibicao);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<SalaDeExibicao>atualizarSala(@PathVariable(value ="id")String id, @RequestBody @Valid CriarSalaDto salaDto){
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(salaService.atualizar(id,salaDto));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<SalaDeExibicao>deletarSala(@PathVariable(value ="id")String id) {
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(salaService.deletar(id));
     }
 }
