@@ -19,8 +19,4 @@ public class FilmeRowMapper implements RowMapper<Filme> {
 
         return filme;
     }
-
-
-
-
 }

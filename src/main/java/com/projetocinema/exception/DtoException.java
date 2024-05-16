@@ -10,24 +10,20 @@ public class DtoException {
     private final ZonedDateTime timestamp;
 
     public DtoException(String menssagem, HttpStatus httpStatus, ZonedDateTime timestamp){
-
         this.menssagem = menssagem;
         this.httpStatus = httpStatus;
         this.timestamp = timestamp;
     }
 
     public String getMenssagem(){
-
         return menssagem;
     }
 
     public HttpStatus getHttpStatus(){
-
         return httpStatus;
     }
 
     public ZonedDateTime getTimestamp(){
-
         return timestamp;
     }
 }

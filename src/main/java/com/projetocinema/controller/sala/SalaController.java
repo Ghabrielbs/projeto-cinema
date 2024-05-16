@@ -22,26 +22,20 @@ public class SalaController {
     @Autowired
     private SalaService salaService;
 
-
-
     @GetMapping
     public ResponseEntity<List<SalaDeExibicao>> listar(){
-
         return ResponseEntity.status(HttpStatus.OK).body(salaService.listar());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<SalaDeExibicao> buscar(@PathVariable String id){
-
         return ResponseEntity.status(HttpStatus.OK).body(salaService.buscar(id));
     }
 
     @PostMapping
     public ResponseEntity<SalaDeExibicao> criar(@RequestBody CriarSalaDto dto){
 
-        //convertendo dto em entidade
        SalaDeExibicao sala = salaDeExibicaoApplication.criar(dto);
-       //enviando para o service
        SalaDeExibicao salaDeExibicao =salaService.criar(dto);
 
        return ResponseEntity.status(HttpStatus.CREATED).body(salaDeExibicao);
@@ -49,13 +43,11 @@ public class SalaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<SalaDeExibicao>atualizarSala(@PathVariable(value ="id")String id, @RequestBody @Valid CriarSalaDto salaDto){
-
         return ResponseEntity.status(HttpStatus.CREATED).body(salaService.atualizar(id,salaDto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<SalaDeExibicao>deletarSala(@PathVariable(value ="id")String id) {
-
         return ResponseEntity.status(HttpStatus.CREATED).body(salaService.deletar(id));
     }
 }

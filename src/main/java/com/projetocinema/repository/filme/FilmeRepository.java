@@ -1,6 +1,8 @@
 package com.projetocinema.repository.filme;
 
 import com.projetocinema.domain.filme.Filme;
+import com.projetocinema.enums.FilmeMenssagens;
+import com.projetocinema.exception.RequisicaoApiExpetion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -23,8 +25,8 @@ public class FilmeRepository {
 
         try {
             resultado = jdbcTemplate.query(sql, filmeRowMapper);
-        } catch(Exception e) {
-            e.printStackTrace();
+        } catch(RequisicaoApiExpetion expetion) {
+            expetion.getMessage();
         }
 
         return resultado;
@@ -36,8 +38,8 @@ public class FilmeRepository {
         try {
             resultado = jdbcTemplate.queryForObject(sql,filmeRowMapper, id);
         }
-        catch (Exception e){
-            e.printStackTrace();
+        catch (RequisicaoApiExpetion expetion){
+            expetion.getMessage();
         }
 
         return resultado;
@@ -46,12 +48,11 @@ public class FilmeRepository {
     public void criar(Filme filme){
         String sql = "insert into filme (id,nome, descricao) values (?,?,?)";
 
-
         try {
             jdbcTemplate.update(sql, filme.getId(),filme.getNome(),filme.getDescricao());
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch(RequisicaoApiExpetion expetion){
+            expetion.getMessage();
         }
     }
 

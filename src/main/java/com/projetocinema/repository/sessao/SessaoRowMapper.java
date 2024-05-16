@@ -14,13 +14,10 @@ public class SessaoRowMapper implements RowMapper<Sessao> {
     @Override
     public Sessao mapRow(ResultSet rs, int rowNum) throws SQLException {
         Sessao sessao = new Sessao();
-
         sessao.setId(rs.getString("id"));
         sessao.setIdFilme(rs.getString("filme"));
         sessao.setIdSala((rs.getString("saladecinema")));
 
         return sessao;
     }
-
-
 }

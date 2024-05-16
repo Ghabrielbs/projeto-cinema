@@ -17,7 +17,6 @@ public class ApiExceptionHandler {
                 ZonedDateTime.now(ZoneId.of("Z")));
 
         return new ResponseEntity<Object>(dtoException,e.getHttpStatus());
-
     }
 }
 

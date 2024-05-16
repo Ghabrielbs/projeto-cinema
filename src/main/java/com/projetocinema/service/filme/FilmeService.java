@@ -16,14 +16,18 @@ public class FilmeService {
     FilmeRepository filmeRepository;
 
     public List<Filme> listar(){
+
        if(filmeRepository.listar().equals(0))
            throw new RequisicaoApiExpetion(FilmeMenssagens.TABELA_VAZIA.getmenssagem());
-        return filmeRepository.listar();
+
+       return filmeRepository.listar();
     }
 
     public Filme criar(CriarFilmeDto filmeDto){
+
         if(filmeDto.getNome().equals(null))
             throw new RequisicaoApiExpetion(FilmeMenssagens.NOME_DO_FILME_VAZIO.getmenssagem());
+
         if (filmeDto.getId().equals(null))
             throw new RequisicaoApiExpetion(FilmeMenssagens.ID_INVALIDO.getmenssagem());
 
@@ -37,16 +41,19 @@ public class FilmeService {
     }
 
     public Filme buscar(String id){
+
        if( filmeRepository.findByCountId(id) ==0)
            throw new RequisicaoApiExpetion(FilmeMenssagens.FILME_NAO_ENCONTRADO.getmenssagem());
-        Filme filme = filmeRepository.buscar(id);
 
+       Filme filme = filmeRepository.buscar(id);
         return filme;
     }
 
-    public Filme atualizarFilme(String id, CriarFilmeDto filmeDto){
+    public Filme atualizar(String id, CriarFilmeDto filmeDto){
+
         if(filmeRepository.findByCountId(id) == 0)
             throw new RequisicaoApiExpetion(FilmeMenssagens.FILME_NAO_ENCONTRADO.getmenssagem());
+
         if(filmeDto.getNome().equals(null))
             throw new RequisicaoApiExpetion(FilmeMenssagens.NOME_DO_FILME_VAZIO.getmenssagem());
 
@@ -56,7 +63,8 @@ public class FilmeService {
         return filme;
     }
 
-    public Filme deletarFilme(String id){
+    public Filme deletar(String id){
+
         Filme filme = buscar(id);
         filmeRepository.deletar(filme);
 
