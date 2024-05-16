@@ -13,23 +13,24 @@ import java.util.List;
 
 @Service
 public class SalaService {
-
     @Autowired
     private SalaRepository salaRepository;
 
     public List<SalaDeExibicao> listar(){
+
         if (salaRepository.listar() ==null)
             throw new RequisicaoApiExpetion(SalaMenssagens.TABELA_SALA_VAZIA.getMenssagem());
-        List<SalaDeExibicao> salaDeExibicao = salaRepository.listar();
 
+        List<SalaDeExibicao> salaDeExibicao = salaRepository.listar();
         return salaDeExibicao;
     }
 
     public SalaDeExibicao buscar(String id) {
+
         if (salaRepository.buscar(id).equals(0))
             throw new RequisicaoApiExpetion(SalaMenssagens.SALA_NAO_ENCONTRADA.getMenssagem());
-        SalaDeExibicao salaDeExibicao = salaRepository.buscar(id);
 
+        SalaDeExibicao salaDeExibicao = salaRepository.buscar(id);
         return salaDeExibicao;
     }
 
@@ -47,6 +48,7 @@ public class SalaService {
     }
 
     public SalaDeExibicao atualizar(String id, CriarSalaDto salaDto) {
+
         SalaDeExibicao sala = new SalaDeExibicao();
         salaRepository.atualizar(sala);
 
@@ -54,6 +56,7 @@ public class SalaService {
     }
 
     public SalaDeExibicao deletar(String id) {
+
         SalaDeExibicao sala = new SalaDeExibicao();
         salaRepository.deletar(sala);
 

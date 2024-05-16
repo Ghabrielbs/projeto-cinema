@@ -10,11 +10,9 @@ public enum SessaoMenssagens {
     private final String menssagem;
 
     SessaoMenssagens(String menssagem){
-
         this.menssagem = menssagem;
     }
     public String getMenssagem(){
-
         return menssagem;
     }
 }

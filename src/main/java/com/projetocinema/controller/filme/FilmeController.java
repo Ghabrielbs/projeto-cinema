@@ -23,39 +23,30 @@ public class FilmeController {
 
     @GetMapping
     public ResponseEntity <List<Filme>> listar(){
-        //enviando para o service
         return ResponseEntity.status(HttpStatus.OK).body(filmeService.listar());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity  <Filme> buscar (@PathVariable (value ="id") String id){
-
-        //enviando para o service
         return ResponseEntity.status(HttpStatus.OK).body(filmeService.buscar(id));
     }
 
     @PostMapping
     public ResponseEntity <Filme> criar(@RequestBody CriarFilmeDto dto){
 
-        //enviando para o service
         Filme filme = filmeService.criar(dto);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(filme);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Filme>atualizarFilme(@PathVariable(value ="id")String id, @RequestBody @Valid CriarFilmeDto filmeDto){
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(filmeService.atualizarFilme(id,filmeDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(filmeService.atualizar(id,filmeDto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Filme>deletarFilme(@PathVariable(value ="id")String id) {
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(filmeService.deletarFilme(id));
+        return ResponseEntity.status(HttpStatus.CREATED).body(filmeService.deletar(id));
     }
-
-
 }
 
 

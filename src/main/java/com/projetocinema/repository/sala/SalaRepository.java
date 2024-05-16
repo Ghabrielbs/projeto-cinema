@@ -1,6 +1,7 @@
 package com.projetocinema.repository.sala;
 
 import com.projetocinema.domain.sala.SalaDeExibicao;
+import com.projetocinema.exception.RequisicaoApiExpetion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -24,12 +25,11 @@ public class SalaRepository {
 
         try {
             resultado = jdbcTemplate.query(sql, salaRowMapper);
-        }catch(Exception e) {
-            e.printStackTrace();
+        }catch(RequisicaoApiExpetion expetion) {
+            expetion.getMessage();
         }
 
         return resultado;
-
     }
     public SalaDeExibicao buscar (String id) {
         String sql = "SELECT * FROM saladeexibicao WHERE id = ?";
@@ -37,8 +37,8 @@ public class SalaRepository {
 
         try {
             resultado = jdbcTemplate.queryForObject(sql, salaRowMapper,id);
-        }catch(Exception e) {
-            e.printStackTrace();
+        }catch(RequisicaoApiExpetion expetion) {
+            expetion.getMessage();
         }
 
         return resultado;
@@ -50,8 +50,8 @@ public class SalaRepository {
         try {
             jdbcTemplate.update(sql, salaDeExibicao.getIdSala(),
                     salaDeExibicao.getNumero());
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (RequisicaoApiExpetion expetion) {
+            expetion.getMessage();
         }
     }
 

@@ -22,35 +22,29 @@ public class SessaoController {
 
     @GetMapping
     public ResponseEntity<List<Sessao>> listar(){
-
         return ResponseEntity.status(HttpStatus.OK).body(sessaoService.listar());
     }
 
     @GetMapping ("/{id}")
     public ResponseEntity <Sessao> buscar(@PathVariable String id){
-
         return ResponseEntity.status(HttpStatus.OK).body(sessaoService.buscar(id));
     }
 
     @PostMapping
     public ResponseEntity <Sessao> criar(@RequestBody CriarSessaoDto dto){
 
-
         Sessao sessao = sessaoService.criar(dto);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(sessao);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Sessao>atualizarSessao(@PathVariable(value ="id")String id, @RequestBody @Valid CriarSessaoDto sessaoDto){
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.atualizarSessao(id, sessaoDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.atualizar(id, sessaoDto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Sessao>deletarSessao(@PathVariable(value ="id")String id) {
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.deletarSessao(id));
+        return ResponseEntity.status(HttpStatus.CREATED).body(sessaoService.deletar(id));
     }
 }
 
